@@ -1,3 +1,4 @@
+import 'package:dristi_nayan/Screens/splash_screen.dart';
 import 'package:flutter/material.dart';
 
 void main() {
@@ -10,13 +11,10 @@ class MyApp extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
-      debugShowCheckedModeBanner: false,
-      home: Scaffold(
-        appBar: AppBar(
-          title: const Text("Dristi Nayan"),
-        ),
-        body: const Center(child: Text("Hello World")),
-      ),
-    );
+        debugShowCheckedModeBanner: false,
+        title: "Dristi Nayan",
+        theme: ThemeData(
+            primaryColor: Colors.amber, scaffoldBackgroundColor: Colors.white),
+        home: SplashScreen());
   }
 }
