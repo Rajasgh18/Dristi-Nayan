@@ -1,18 +1,18 @@
 import 'package:dristi_nayan/Screens/Components/input.dart';
 import 'package:dristi_nayan/Screens/home.dart';
-import 'package:dristi_nayan/Screens/signup.dart';
+import 'package:dristi_nayan/Screens/login.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_tailwindcss_defaults/colors.dart';
 import 'package:google_fonts/google_fonts.dart';
 
-class Login extends StatefulWidget {
-  const Login({super.key});
+class Signup extends StatefulWidget {
+  const Signup({super.key});
 
   @override
-  State<Login> createState() => _LoginState();
+  State<Signup> createState() => _SignupState();
 }
 
-class _LoginState extends State<Login> {
+class _SignupState extends State<Signup> {
   final emailController = TextEditingController();
   final passwordController = TextEditingController();
 
@@ -55,7 +55,7 @@ class _LoginState extends State<Login> {
                     crossAxisAlignment: CrossAxisAlignment.stretch,
                     children: [
                       Text(
-                        "Login with Account",
+                        "Create Account with Email",
                         textAlign: TextAlign.center,
                         style: GoogleFonts.firaSans(
                           color: TailwindColors.blueGray,
@@ -83,7 +83,7 @@ class _LoginState extends State<Login> {
                       ),
                       ElevatedButton(
                         onPressed: () {
-                          Navigator.pushReplacement(
+                          Navigator.push(
                               context,
                               MaterialPageRoute(
                                   builder: (context) => const Home()));
@@ -94,7 +94,7 @@ class _LoginState extends State<Login> {
                           ),
                         ),
                         child: Text(
-                          "Login",
+                          "Sign up with Email",
                           style: GoogleFonts.firaSans(fontSize: 18),
                         ),
                       ),
@@ -105,7 +105,7 @@ class _LoginState extends State<Login> {
                         mainAxisAlignment: MainAxisAlignment.center,
                         children: [
                           Text(
-                            "Don't have an Account?",
+                            "Already have an Account?",
                             style: GoogleFonts.firaSans(
                                 fontSize: 18, color: TailwindColors.blueGray),
                           ),
@@ -114,13 +114,13 @@ class _LoginState extends State<Login> {
                           ),
                           InkWell(
                             onTap: () {
-                              Navigator.pushReplacement(
+                              Navigator.push(
                                   context,
                                   MaterialPageRoute(
-                                      builder: (context) => const Signup()));
+                                      builder: (context) => const Login()));
                             },
                             child: Text(
-                              "Sign up",
+                              "Login",
                               style: GoogleFonts.firaSans(
                                   fontSize: 18,
                                   color: TailwindColors.blue,

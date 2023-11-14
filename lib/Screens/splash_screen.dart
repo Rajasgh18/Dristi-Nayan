@@ -3,6 +3,7 @@ import 'dart:async';
 import 'package:dristi_nayan/Screens/home.dart';
 import 'package:dristi_nayan/Screens/login.dart';
 import 'package:flutter/material.dart';
+import 'package:flutter_tailwindcss_defaults/colors.dart';
 import 'package:google_fonts/google_fonts.dart';
 import 'package:shared_preferences/shared_preferences.dart';
 
@@ -23,7 +24,7 @@ class _SplashScreen extends State<SplashScreen> {
     SharedPreferences sp = await SharedPreferences.getInstance();
     final isLogin = sp.getBool("isLogin") ?? false;
     Timer(const Duration(seconds: 2), () {
-      Navigator.push(
+      Navigator.pushReplacement(
           context,
           MaterialPageRoute(
             builder: (context) => isLogin ? const Home() : const Login(),
@@ -55,7 +56,7 @@ class _SplashScreen extends State<SplashScreen> {
               style: GoogleFonts.jetBrainsMono(
                   fontSize: 28,
                   fontWeight: FontWeight.bold,
-                  color: const Color.fromARGB(255, 84, 211, 149)),
+                  color: TailwindColors.blue),
             ),
           ],
         ),

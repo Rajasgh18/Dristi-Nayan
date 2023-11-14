@@ -94,6 +94,14 @@ packages:
       url: "https://pub.dev"
     source: hosted
     version: "2.0.3"
+  flutter_tailwindcss_defaults:
+    dependency: "direct main"
+    description:
+      name: flutter_tailwindcss_defaults
+      sha256: "1ff0912dcefb94e381c165efaee5d644c979bc1b8863ecbb7604177c6acbdad4"
+      url: "https://pub.dev"
+    source: hosted
+    version: "0.2.0"
   flutter_test:
     dependency: "direct dev"
     description: flutter
