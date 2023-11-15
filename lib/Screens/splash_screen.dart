@@ -53,10 +53,7 @@ class _SplashScreen extends State<SplashScreen> {
             ),
             Text(
               "Dristi Nayan",
-              style: GoogleFonts.jetBrainsMono(
-                  fontSize: 28,
-                  fontWeight: FontWeight.bold,
-                  color: TailwindColors.blue),
+              style: GoogleFonts.viga(fontSize: 28, color: TailwindColors.blue),
             ),
           ],
         ),

@@ -1,3 +1,6 @@
+import 'package:dristi_nayan/Screens/Components/account_destination.dart';
+import 'package:dristi_nayan/Screens/Components/home_destination.dart';
+import 'package:dristi_nayan/Screens/Components/notifications_destination.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_tailwindcss_defaults/colors.dart';
 import 'package:google_fonts/google_fonts.dart';
@@ -26,7 +29,7 @@ class _HomeState extends State<Home> {
         title: Text(
           "Dristi Nayan",
           textAlign: TextAlign.center,
-          style: GoogleFonts.firaSans(),
+          style: GoogleFonts.viga(fontSize: 24),
         ),
         centerTitle: true,
         actions: const <Widget>[
@@ -42,19 +45,10 @@ class _HomeState extends State<Home> {
       drawer: const Drawer(
           child: Padding(
               padding: EdgeInsets.symmetric(vertical: 8), child: DrawerList())),
-      body: <Widget>[
-        Container(
-          alignment: Alignment.center,
-          child: const Text('Page 1'),
-        ),
-        Container(
-          alignment: Alignment.center,
-          child: const Text('Page 2'),
-        ),
-        Container(
-          alignment: Alignment.center,
-          child: const Text('Page 3'),
-        ),
+      body: const <Widget>[
+        HomeDestination(),
+        AccountDestination(),
+        NotificationsDestination(),
       ][currentPageIndex],
       bottomNavigationBar: NavigationBar(
         onDestinationSelected: (int index) {
@@ -66,15 +60,16 @@ class _HomeState extends State<Home> {
         selectedIndex: currentPageIndex,
         destinations: [
           NavigationDestination(
-              icon: Icon(
-                Icons.home_sharp,
-                color: TailwindColors.blueGray.shade600,
-              ),
-              selectedIcon: const Icon(
-                Icons.home_sharp,
-                color: TailwindColors.white,
-              ),
-              label: "Home"),
+            icon: Icon(
+              Icons.home_sharp,
+              color: TailwindColors.blueGray.shade600,
+            ),
+            selectedIcon: const Icon(
+              Icons.home_sharp,
+              color: TailwindColors.white,
+            ),
+            label: "Home",
+          ),
           NavigationDestination(
             icon: Icon(
               Icons.account_circle,

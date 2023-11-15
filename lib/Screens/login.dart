@@ -27,17 +27,20 @@ class _LoginState extends State<Login> {
           children: [
             Text(
               "Dristi Nayan",
-              style: GoogleFonts.jetBrainsMono(
-                  fontSize: 36,
-                  color: TailwindColors.blue,
-                  fontWeight: FontWeight.bold),
+              style: GoogleFonts.viga(
+                fontSize: 36,
+                color: TailwindColors.blue,
+              ),
+            ),
+            const SizedBox(
+              height: 5,
             ),
             Text(
               "An Crime Management Application",
-              style: GoogleFonts.jetBrainsMono(
-                  fontSize: 16,
-                  color: TailwindColors.coolGray.shade600,
-                  fontWeight: FontWeight.bold),
+              style: GoogleFonts.firaSans(
+                fontSize: 18,
+                color: TailwindColors.coolGray.shade600,
+              ),
             ),
             const SizedBox(
               height: 40,
@@ -49,7 +52,8 @@ class _LoginState extends State<Login> {
                 borderRadius: BorderRadius.circular(16),
                 child: Container(
                   color: TailwindColors.white,
-                  padding: const EdgeInsets.all(16),
+                  padding:
+                      const EdgeInsets.symmetric(horizontal: 20, vertical: 32),
                   child: Column(
                     mainAxisAlignment: MainAxisAlignment.center,
                     crossAxisAlignment: CrossAxisAlignment.stretch,
@@ -122,9 +126,9 @@ class _LoginState extends State<Login> {
                             child: Text(
                               "Sign up",
                               style: GoogleFonts.firaSans(
-                                  fontSize: 18,
-                                  color: TailwindColors.blue,
-                                  decoration: TextDecoration.underline),
+                                fontSize: 18,
+                                color: TailwindColors.blue,
+                              ),
                             ),
                           )
                         ],

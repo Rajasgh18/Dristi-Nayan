@@ -27,17 +27,21 @@ class _SignupState extends State<Signup> {
           children: [
             Text(
               "Dristi Nayan",
-              style: GoogleFonts.jetBrainsMono(
-                  fontSize: 36,
-                  color: TailwindColors.blue,
-                  fontWeight: FontWeight.bold),
+              style: GoogleFonts.viga(
+                fontSize: 36,
+                color: TailwindColors.blue,
+                // fontWeight: FontWeight.bold,
+              ),
+            ),
+            const SizedBox(
+              height: 5,
             ),
             Text(
               "An Crime Management Application",
-              style: GoogleFonts.jetBrainsMono(
-                  fontSize: 16,
-                  color: TailwindColors.coolGray.shade600,
-                  fontWeight: FontWeight.bold),
+              style: GoogleFonts.firaSans(
+                fontSize: 18,
+                color: TailwindColors.coolGray.shade600,
+              ),
             ),
             const SizedBox(
               height: 40,
@@ -49,7 +53,8 @@ class _SignupState extends State<Signup> {
                 borderRadius: BorderRadius.circular(16),
                 child: Container(
                   color: TailwindColors.white,
-                  padding: const EdgeInsets.all(16),
+                  padding:
+                      const EdgeInsets.symmetric(horizontal: 20, vertical: 32),
                   child: Column(
                     mainAxisAlignment: MainAxisAlignment.center,
                     crossAxisAlignment: CrossAxisAlignment.stretch,
@@ -83,7 +88,7 @@ class _SignupState extends State<Signup> {
                       ),
                       ElevatedButton(
                         onPressed: () {
-                          Navigator.push(
+                          Navigator.pushReplacement(
                               context,
                               MaterialPageRoute(
                                   builder: (context) => const Home()));
@@ -114,7 +119,7 @@ class _SignupState extends State<Signup> {
                           ),
                           InkWell(
                             onTap: () {
-                              Navigator.push(
+                              Navigator.pushReplacement(
                                   context,
                                   MaterialPageRoute(
                                       builder: (context) => const Login()));
@@ -122,9 +127,7 @@ class _SignupState extends State<Signup> {
                             child: Text(
                               "Login",
                               style: GoogleFonts.firaSans(
-                                  fontSize: 18,
-                                  color: TailwindColors.blue,
-                                  decoration: TextDecoration.underline),
+                                  fontSize: 18, color: TailwindColors.blue),
                             ),
                           )
                         ],
