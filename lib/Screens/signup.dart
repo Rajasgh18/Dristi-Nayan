@@ -97,6 +97,7 @@ class _SignupState extends State<Signup> {
                           shape: RoundedRectangleBorder(
                             borderRadius: BorderRadius.circular(8),
                           ),
+                          minimumSize: const Size(double.infinity, 50),
                         ),
                         child: Text(
                           "Sign up with Email",

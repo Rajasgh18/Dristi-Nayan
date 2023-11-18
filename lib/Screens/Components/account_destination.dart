@@ -13,9 +13,9 @@ class _AccountDestinationState extends State<AccountDestination> {
   @override
   Widget build(BuildContext context) {
     return Padding(
-      padding: const EdgeInsets.symmetric(horizontal: 20),
+      padding: const EdgeInsets.symmetric(horizontal: 20, vertical: 20),
       child: Column(
-        mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+        // mainAxisAlignment: MainAxisAlignment.spaceBetween,
         crossAxisAlignment: CrossAxisAlignment.stretch,
         children: [
           Text(
@@ -23,6 +23,9 @@ class _AccountDestinationState extends State<AccountDestination> {
             textAlign: TextAlign.center,
             style: GoogleFonts.firaSans(
                 fontSize: 32, color: TailwindColors.blueGray.shade600),
+          ),
+          const SizedBox(
+            height: 20,
           ),
           ListTile(
             contentPadding: const EdgeInsets.symmetric(horizontal: 0),
@@ -40,21 +43,31 @@ class _AccountDestinationState extends State<AccountDestination> {
               style: GoogleFonts.firaSans(fontSize: 16),
             ),
           ),
+          const SizedBox(
+            height: 20,
+          ),
           const Column(
             children: [
               SettingButtons(
                 title: "Account",
+                iconName: Icons.settings,
               ),
               SettingButtons(
                 title: "Security",
+                iconName: Icons.security,
               ),
               SettingButtons(
                 title: "Privacy Policy",
+                iconName: Icons.privacy_tip,
               ),
               SettingButtons(
                 title: "Help Centre",
+                iconName: Icons.help,
               ),
             ],
+          ),
+          const SizedBox(
+            height: 20,
           ),
           ElevatedButton(
               onPressed: () {},
@@ -76,7 +89,9 @@ class _AccountDestinationState extends State<AccountDestination> {
 
 class SettingButtons extends StatelessWidget {
   final String title;
-  const SettingButtons({super.key, required this.title});
+  final IconData iconName;
+  const SettingButtons(
+      {super.key, required this.title, required this.iconName});
 
   @override
   Widget build(BuildContext context) {
@@ -86,8 +101,8 @@ class SettingButtons extends StatelessWidget {
           border: Border.all(color: TailwindColors.blueGray.shade400),
           borderRadius: BorderRadius.circular(8)),
       child: ListTile(
-        leading: const Icon(
-          Icons.notifications,
+        leading: Icon(
+          iconName,
           size: 30,
           color: TailwindColors.blueGray,
         ),

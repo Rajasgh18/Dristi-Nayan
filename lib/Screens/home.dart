@@ -13,35 +13,31 @@ class Home extends StatefulWidget {
   State<Home> createState() => _HomeState();
 }
 
-class _HomeState extends State<Home> {
+class _HomeState extends State<Home> with TickerProviderStateMixin {
   int currentPageIndex = 0;
   final GlobalKey<ScaffoldState> scaffoldKey = GlobalKey<ScaffoldState>();
-  void openDrawer() {
-    scaffoldKey.currentState!.openEndDrawer();
-  }
 
   @override
   Widget build(BuildContext context) {
     return Scaffold(
       key: scaffoldKey,
       appBar: AppBar(
-        backgroundColor: TailwindColors.blue,
-        title: Text(
-          "Dristi Nayan",
-          textAlign: TextAlign.center,
-          style: GoogleFonts.viga(fontSize: 24),
-        ),
-        centerTitle: true,
-        actions: const <Widget>[
-          Icon(
-            Icons.account_circle,
-            size: 32,
+          backgroundColor: TailwindColors.blue,
+          title: Text(
+            "Dristi Nayan",
+            textAlign: TextAlign.center,
+            style: GoogleFonts.viga(fontSize: 24),
           ),
-          SizedBox(
-            width: 12,
-          )
-        ],
-      ),
+          centerTitle: true,
+          actions: const <Widget>[
+            Icon(
+              Icons.account_circle,
+              size: 32,
+            ),
+            SizedBox(
+              width: 12,
+            )
+          ]),
       drawer: const Drawer(
           child: Padding(
               padding: EdgeInsets.symmetric(vertical: 8), child: DrawerList())),
